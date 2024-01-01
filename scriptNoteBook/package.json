@@ -2,7 +2,7 @@
   "name": "scriptnotebook",
   "displayName": "script noteBook",
   "publisher": "awsxxf",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "vscode generic notebook surport with integrated terminal",
   "extensionKind": [
     "ui"
