@@ -3,6 +3,9 @@
   "displayName": "TerminalNoteBook",
   "description": "",
   "version": "0.0.3",
+  "repository": {
+    "url": "https://github.com/AWSXXF/vscode-terminal-notebook.git"
+  },
   "engines": {
     "vscode": "^1.70.0"
   },
