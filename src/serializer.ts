@@ -46,6 +46,8 @@ const serializer = new (class implements vscode.NotebookSerializer {
         );
 
     deserializeNotebook(content: Uint8Array, token: vscode.CancellationToken): vscode.NotebookData | Thenable<vscode.NotebookData> {
+        if (content.length === 0) { return new vscode.NotebookData([]); }
+
         const contents = new TextDecoder().decode(content);
         const lines = contents.split(/\r?\n/);
         var data: vscode.NotebookCellData[] = [];
