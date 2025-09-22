@@ -3,7 +3,7 @@
   "publisher": "littrick",
   "displayName": "%displayName%",
   "description": "%description%",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": {
     "url": "https://github.com/AWSXXF/vscode-terminal-notebook.git"
   },
