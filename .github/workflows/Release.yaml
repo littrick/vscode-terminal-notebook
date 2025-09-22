@@ -52,12 +52,6 @@ jobs:
           NEW_VERSION=$(npm version ${{ github.event.inputs.update_version }} -m "Bump version to %s")
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
         fi
-
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        branch: ${{ github.ref_name }}
-
     - name: Setup Nodejs
       uses: actions/setup-node@v4
       with:
@@ -82,6 +76,11 @@ jobs:
         else
           vsce publish
         fi
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        branch: ${{ github.ref_name }}
 
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2
