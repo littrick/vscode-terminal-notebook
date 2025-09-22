@@ -1,0 +1,6 @@
+{
+    "displayName": "基于Markdown的终端Notebook",
+    "description": "这是一个非常方便的Notebook工具，可以将md作为Notebook打开，并向当前活动的终端发送命令。",
+    "commands.TerminalNotebook.OpenNotebook.title": "打开为Notebook",
+    "configuration.TerminalNoteBook.LanguageId Surported.markdownDescription": "笔记本支持的[languade id](https://code.visualstudio.com/docs/languages/identifiers)。"
+}

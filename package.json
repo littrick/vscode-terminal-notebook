@@ -4,8 +4,13 @@
   "displayName": "%displayName%",
   "description": "%description%",
   "version": "0.0.5",
+  "keywords": [
+    "terminal",
+    "notebook",
+    "markdown"
+  ],
   "repository": {
-    "url": "https://github.com/AWSXXF/vscode-terminal-notebook.git"
+    "url": "https://github.com/littrick/vscode-terminal-notebook.git"
   },
   "engines": {
     "vscode": "^1.70.0"
