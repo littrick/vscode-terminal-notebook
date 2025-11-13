@@ -4,6 +4,7 @@
 
 This is a convenient Notebook tool that allows you to open Markdown documents as Notebooks in VSCode and input the content of code blocks into the current active terminal. This can greatly simplify the input of some repetitive commands and is very convenient in scenarios such as terminal debugging and step reproduction.
 
+---
 ## Usage
 
 1. Install this plugin in the extension store of VSCode.
