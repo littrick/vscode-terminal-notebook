@@ -2,7 +2,7 @@
   "name": "scriptnotebook",
   "displayName": "Terminal Notebook for Markdown",
   "publisher": "awsxxf",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "%description%",
   "extensionKind": [
     "ui"
