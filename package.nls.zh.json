@@ -1,5 +1,4 @@
 {
-    "displayName": "终端Notebook",
     "description": "一个可将 Markdown 作为笔记本打开，并将代码单元发送到当前活动终端的扩展，支持的文件后缀有 .mdnb 和 .md",
     "notebooks.scrnb.displayName": "终端Notebook",
     "notebooks.mdnb.displayName": "Markdown Notebook",

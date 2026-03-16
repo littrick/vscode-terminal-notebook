@@ -1,6 +1,5 @@
 {
-    "displayName": "Terminal Notebook",
-    "description": "A notebook extension that opens Markdown as a notebook and sends code cells to the active terminal.",
+    "description": "A notebook extension that opens Markdown as a notebook and sends code cells to the active terminal. Supported file suffixes are .mdnb and .md",
     "notebooks.scrnb.displayName": "Terminal Notebook",
     "notebooks.mdnb.displayName": "Markdown Notebook",
     "commands.scriptNotebook.openWithNotebook.title": "Open with Terminal Notebook",
