@@ -1,22 +1,25 @@
 import * as vscode from 'vscode';
 import { setting } from './setting';
 
-const mdController = new (class {
-    private readonly id = 'terminal-notebook-controller';
-    private readonly type = 'mdnb';
-    private readonly label = vscode.l10n.t('Terminal Notebook');
-    private readonly supportedLanguages = () => setting.codeSuport;
 
+class ControllerHandle {
+    private readonly id: string;
+    private readonly type: string;
+    private readonly label: string;
+    private readonly supportedLanguages: () => string[];
     private readonly controller: vscode.NotebookController;
 
-    constructor() {
+    constructor(id: string, type: string, label: string, supportedLanguages: () => string[]) {
+        this.id = id;
+        this.type = type;
+        this.label = label;
+        this.supportedLanguages = supportedLanguages;
         this.controller = vscode.notebooks.createNotebookController(
             this.id,
             this.type,
             this.label
         );
         this.controller.supportedLanguages = this.supportedLanguages();
-        this.controller.executeHandler = this.doExecuteAll.bind(this);
     }
 
     private async doExecuteAll(
@@ -42,14 +45,30 @@ const mdController = new (class {
     dispose() {
         this.controller.dispose();
     }
-})();
+}
+
+const mdController = new ControllerHandle(
+    'terminal-notebook-controller',
+    'terminal-notebook-controller',
+    vscode.l10n.t('Terminal Notebook'),
+    () => setting.codeSuport
+);
+
+const scrnbController = new ControllerHandle(
+    'script-notebook-controller',
+    'scrnb',
+    vscode.l10n.t('Script Notebook'),
+    () => setting.codeSuport
+);
 
 function registerNbController(context: vscode.ExtensionContext) {
     context.subscriptions.push(mdController);
+    context.subscriptions.push(scrnbController);
 }
 
 function refreshSupportedLanguages() {
     mdController.refreshSupportedLanguages();
+    scrnbController.refreshSupportedLanguages();
 }
 
 export { registerNbController, refreshSupportedLanguages };
