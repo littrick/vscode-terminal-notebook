@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { setting } from './setting';
+import { log } from './utils';
 
 
 class ControllerHandle {
@@ -17,7 +18,8 @@ class ControllerHandle {
         this.controller = vscode.notebooks.createNotebookController(
             this.id,
             this.type,
-            this.label
+            this.label,
+            this.doExecuteAll.bind(this)
         );
         this.controller.supportedLanguages = this.supportedLanguages();
     }
@@ -35,6 +37,7 @@ class ControllerHandle {
     private doExecute(cell: vscode.NotebookCell): void {
         const terminal = vscode.window.activeTerminal;
         if (!terminal) { return; }
+        log.info(this.type + " Sending: " + cell.document.getText());
         cell.document.getText().split(/\r?\n/g).forEach(cmd => terminal.sendText(cmd));
     }
 
@@ -48,9 +51,9 @@ class ControllerHandle {
 }
 
 const mdController = new ControllerHandle(
-    'terminal-notebook-controller',
-    'terminal-notebook-controller',
-    vscode.l10n.t('Terminal Notebook'),
+    'markdown-notebook-controller',
+    'mdnb',
+    vscode.l10n.t('Markdown Notebook'),
     () => setting.codeSuport
 );
 
